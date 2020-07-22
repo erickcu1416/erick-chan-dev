@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "erick-chan-dev"
+    }
+  },
+  "defaultProject": "erick-chan-dev",
+  "cli": {
+    "analytics": "b3281e75-82c6-44bb-ab06-274c28803040"
+  }
 }
