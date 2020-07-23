@@ -1,0 +1,17 @@
+.img-profile {
+    border-radius: 2%;
+    // width: 200px;
+    // height: 200px;
+    /* you need to match the shadow color to your background or image border for the desired effect*/
+    box-shadow: 0 0 30px 60px white inset;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transform: rotate(-90deg);
+}
+
+.img-banner {
+    border-radius: 20%;
+    width: 450px;
+    height: 450px;
+}
