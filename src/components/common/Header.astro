@@ -1,0 +1,75 @@
+---
+import { getCurrentLocale, t, getLocalizedPath } from '@i18n/index';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+const locale = getCurrentLocale(Astro.url.pathname);
+
+const navItems = [
+  { key: 'home', href: getLocalizedPath('/', locale) },
+  { key: 'services', href: getLocalizedPath(locale === 'es' ? '/servicios' : '/services', locale) },
+  { key: 'useCases', href: getLocalizedPath(locale === 'es' ? '/casos-de-uso' : '/use-cases', locale) },
+  { key: 'about', href: getLocalizedPath(locale === 'es' ? '/nosotros' : '/about', locale) },
+  { key: 'contact', href: getLocalizedPath(locale === 'es' ? '/contacto' : '/contact', locale) },
+];
+---
+
+<header class="main-header header-one white-menu menu-absolute">
+  <div class="header-upper">
+    <div class="container px-xxl-0 bordered-x clearfix">
+      <div class="header-inner rel d-flex align-items-center">
+        <!-- Logo -->
+        <div class="logo-outer">
+          <div class="logo">
+            <a href={getLocalizedPath('/', locale)}>
+              <img src="/assets/images/logos/logo-white.svg" alt="Erick Chan Logo" width="150" height="40" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-outer mx-lg-auto ps-xxl-5 clearfix">
+          <nav class="main-menu navbar-expand-lg">
+            <div class="navbar-header rpy-10">
+              <div class="mobile-logo">
+                <a href={getLocalizedPath('/', locale)}>
+                  <img src="/assets/images/logos/logo-white.svg" alt="Erick Chan Logo" width="120" height="32" />
+                </a>
+              </div>
+
+              <!-- Mobile Toggle -->
+              <button type="button" class="navbar-toggle" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+
+            <div class="navbar-collapse collapse clearfix">
+              <ul class="navigation clearfix">
+                {
+                  navItems.map((item) => (
+                    <li class={Astro.url.pathname === item.href ? 'current' : ''}>
+                      <a href={item.href}>{t(`nav.${item.key}`, locale)}</a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <!-- Menu Buttons -->
+        <div class="menu-btns d-flex align-items-center gap-3">
+          <LanguageSwitcher />
+          <a
+            href={getLocalizedPath(locale === 'es' ? '/contacto' : '/contact', locale)}
+            class="theme-btn btn-small"
+            data-hover={t('nav.cta', locale)}
+          >
+            <span>{t('nav.cta', locale)}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

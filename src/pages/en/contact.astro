@@ -1,0 +1,72 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import { t } from '@i18n/index';
+
+const locale = 'en';
+---
+
+<PageLayout
+  title={`${t('contact.title', locale)} - Erick Chan`}
+  bannerTitle={t('contact.title', locale)}
+  bannerSubtitle={t('contact.subtitle', locale)}
+>
+  <section class="contact-page bgc-black text-white py-130 rpy-100">
+    <div class="container bordered-x">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="contact-form-wrap">
+            <p class="mb-40">{t('contact.description', locale)}</p>
+            <form class="contact-form" action="#" method="POST">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="name">{t('contact.form.name', locale)}</label>
+                    <input type="text" id="name" name="name" required />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="email">{t('contact.form.email', locale)}</label>
+                    <input type="email" id="email" name="email" required />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="subject">{t('contact.form.subject', locale)}</label>
+                    <input type="text" id="subject" name="subject" required />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="message">{t('contact.form.message', locale)}</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="theme-btn" data-hover={t('contact.form.submit', locale)}>
+                    <span>{t('contact.form.submit', locale)}</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .contact-form-wrap {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 50px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 767px) {
+    .contact-form-wrap {
+      padding: 30px 20px;
+    }
+  }
+</style>

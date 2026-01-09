@@ -1,0 +1,18 @@
+---
+import { getAlternateLinks, type Locale } from '@i18n/index';
+
+interface Props {
+  pathname: string;
+}
+
+const { pathname } = Astro.props;
+const siteUrl = Astro.site?.toString() || 'https://erickchan.dev';
+const alternateLinks = getAlternateLinks(pathname);
+---
+
+{
+  alternateLinks.map(({ locale, path }) => (
+    <link rel="alternate" hreflang={locale === 'es' ? 'es-MX' : 'en-US'} href={`${siteUrl}${path}`} />
+  ))
+}
+<link rel="alternate" hreflang="x-default" href={`${siteUrl}/es/`} />

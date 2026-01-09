@@ -1,0 +1,58 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { t } from '@i18n/index';
+
+const locale = 'es';
+---
+
+<BaseLayout title={t('notFound.title', locale)} noindex={true}>
+  <section class="error-area bgc-black text-white">
+    <div class="container">
+      <div class="error-content text-center">
+        <h1 class="error-code">404</h1>
+        <h2>{t('notFound.title', locale)}</h2>
+        <p>{t('notFound.description', locale)}</p>
+        <a href="/es/" class="theme-btn mt-30" data-hover={t('notFound.button', locale)}>
+          <span>{t('notFound.button', locale)}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .error-area {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+  }
+
+  .error-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .error-code {
+    font-size: clamp(8rem, 20vw, 15rem);
+    font-weight: 800;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--ridda-primary-color), var(--ridda-secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+  }
+
+  .error-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .error-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+</style>

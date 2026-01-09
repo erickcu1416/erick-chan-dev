@@ -1,0 +1,30 @@
+{
+  "name": "erick-chan-dev",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for Erick Chan - Web Developer",
+  "author": "Erick Chan",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/sitemap": "^3.6.1",
+    "aos": "^2.3.4",
+    "astro": "^5.16.7",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "@types/aos": "^3.0.7",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "prettier": "^3.7.4",
+    "prettier-plugin-astro": "^0.14.1"
+  }
+}

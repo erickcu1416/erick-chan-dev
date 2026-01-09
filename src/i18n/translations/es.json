@@ -1,0 +1,140 @@
+{
+  "site": {
+    "title": "Erick Chan - Desarrollador Profesional",
+    "description": "Desarrollador profesional especializado en desarrollo web, aplicaciones móviles y soluciones digitales de alto impacto.",
+    "keywords": "desarrollador web, desarrollo móvil, aplicaciones, SEO, UI/UX, México"
+  },
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "useCases": "Casos de Uso",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "cta": "Iniciar Proyecto"
+  },
+  "hero": {
+    "title": "Construyendo Soluciones Digitales",
+    "subtitle": "El desarrollo web es un aspecto crítico para crear una presencia en línea efectiva. Un sitio web bien diseñado no solo refleja la identidad de tu marca, sino que también mejora la experiencia del usuario.",
+    "cta": "Explorar Proyectos",
+    "trustedClients": "Clientes de Confianza"
+  },
+  "counter": {
+    "projects": "Proyectos Completados",
+    "clients": "Clientes Satisfechos",
+    "experience": "Años de Experiencia",
+    "projectsDesc": "Desarrollo de aplicaciones web y móviles",
+    "clientsDesc": "Empresas y emprendedores felices",
+    "experienceDesc": "Creando soluciones digitales"
+  },
+  "about": {
+    "subtitle": "Sobre Mí",
+    "title": "Transformando Ideas en Realidad Digital con Tecnología Innovadora",
+    "description": "Me especializo en crear sitios web visualmente impactantes y altamente funcionales que ayudan a las empresas a destacar en el mundo digital. Mi pasión está en desarrollar soluciones que generen resultados.",
+    "items": {
+      "design": "Diseño de Producto Digital",
+      "seo": "Optimización SEO",
+      "web": "Desarrollo Web",
+      "mobile": "Diseño de Apps Móviles"
+    },
+    "cta": "Explorar Proyectos",
+    "circles": {
+      "development": "Desarrollo",
+      "webDesign": "Diseño Web",
+      "mobileApps": "Apps Móviles"
+    }
+  },
+  "services": {
+    "subtitle": "Servicios",
+    "title": "Servicios Creativos y Modernos",
+    "webDesign": "Diseño Web",
+    "branding": "Branding",
+    "seo": "SEO",
+    "motionDesign": "Motion Design",
+    "animation": "Animación 3D"
+  },
+  "workProcess": {
+    "subtitle": "Cómo Funciona",
+    "title": "Proceso de Trabajo Paso a Paso",
+    "steps": {
+      "discovery": {
+        "title": "Descubrimiento y Estrategia",
+        "description": "Comenzamos entendiendo tu marca, objetivos y audiencia objetivo"
+      },
+      "design": {
+        "title": "Diseño y Prototipado",
+        "description": "Creamos diseños visuales y prototipos interactivos"
+      },
+      "development": {
+        "title": "Desarrollo y Pruebas",
+        "description": "Construimos tu solución con código limpio y pruebas exhaustivas"
+      },
+      "launch": {
+        "title": "Lanzamiento y Soporte",
+        "description": "Desplegamos tu proyecto y brindamos soporte continuo"
+      }
+    }
+  },
+  "projects": {
+    "subtitle": "Trabajos Populares",
+    "title": "Explora Nuestros Últimos Proyectos",
+    "cta": "Explorar Proyectos",
+    "categories": {
+      "all": "Todos",
+      "web": "Web",
+      "mobile": "Móvil",
+      "design": "Diseño"
+    }
+  },
+  "testimonials": {
+    "subtitle": "Testimonios",
+    "title": "Lo que Dicen Nuestros Clientes",
+    "trustedBy": "Confiado por líderes de la industria"
+  },
+  "cta": {
+    "title": "Ponte en Contacto y Comienza a Crecer tu Negocio Hoy",
+    "subtitle": "¿Tienes preguntas? ¡No dudes en contactarnos!",
+    "button": "Comenzar"
+  },
+  "footer": {
+    "description": "Contenido de alta calidad en el corazón de una estrategia de marketing exitosa.",
+    "location": {
+      "title": "Ubicación",
+      "address": "Ciudad de México, México"
+    },
+    "contact": {
+      "title": "Contacto",
+      "email": "contacto@erickchan.dev",
+      "phone": "+52 (55) 1234 5678"
+    },
+    "social": {
+      "title": "Síguenos"
+    },
+    "newsletter": {
+      "placeholder": "Correo Electrónico",
+      "button": "Suscribirse"
+    },
+    "copyright": "Derechos reservados.",
+    "links": {
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Uso",
+      "faq": "FAQ"
+    }
+  },
+  "notFound": {
+    "title": "Página No Encontrada",
+    "description": "Lo sentimos, la página que buscas no existe o ha sido movida.",
+    "button": "Volver al Inicio"
+  },
+  "contact": {
+    "subtitle": "Contacto",
+    "title": "Ponte en Contacto",
+    "description": "¿Tienes un proyecto en mente? Hablemos sobre cómo puedo ayudarte.",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "submit": "Enviar Mensaje"
+    }
+  }
+}

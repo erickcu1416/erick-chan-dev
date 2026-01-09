@@ -1,0 +1,48 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import { t } from '@i18n/index';
+
+const locale = 'es';
+---
+
+<PageLayout
+  title={`${t('services.title', locale)} - Erick Chan`}
+  bannerTitle={t('services.title', locale)}
+  bannerSubtitle={t('services.subtitle', locale)}
+>
+  <section class="services-page bgc-black text-white py-130 rpy-100">
+    <div class="container bordered-x">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="coming-soon text-center">
+            <h2>Próximamente</h2>
+            <p>Esta sección está en desarrollo. Pronto podrás ver todos los servicios que ofrezco.</p>
+            <a href="/es/" class="theme-btn mt-30" data-hover="Volver al Inicio">
+              <span>Volver al Inicio</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .coming-soon {
+    padding: 100px 0;
+  }
+
+  .coming-soon h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--ridda-primary-color), var(--ridda-secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .coming-soon p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.125rem;
+  }
+</style>

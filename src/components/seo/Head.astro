@@ -1,0 +1,88 @@
+---
+import { getCurrentLocale, t, getAlternateLinks } from '@i18n/index';
+import OpenGraph from './OpenGraph.astro';
+import TwitterCard from './TwitterCard.astro';
+import Hreflang from './Hreflang.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+  type?: 'website' | 'article' | 'profile';
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  image = '/android-chrome-512x512.png',
+  canonical,
+  type = 'website',
+  noindex = false,
+} = Astro.props;
+
+const locale = getCurrentLocale(Astro.url.pathname);
+const siteTitle = title || t('site.title', locale);
+const siteDescription = description || t('site.description', locale);
+const siteUrl = Astro.site?.toString() || 'https://erickchan.dev';
+const currentUrl = new URL(Astro.url.pathname, siteUrl).href;
+const canonicalUrl = canonical || currentUrl;
+const imageUrl = image.startsWith('http') ? image : new URL(image, siteUrl).href;
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>{siteTitle}</title>
+  <meta name="description" content={siteDescription} />
+  <meta name="keywords" content={t('site.keywords', locale)} />
+
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#111111" />
+
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Open Graph -->
+  <OpenGraph
+    title={siteTitle}
+    description={siteDescription}
+    image={imageUrl}
+    url={canonicalUrl}
+    type={type}
+    locale={locale}
+  />
+
+  <!-- Twitter Card -->
+  <TwitterCard title={siteTitle} description={siteDescription} image={imageUrl} />
+
+  <!-- Hreflang -->
+  <Hreflang pathname={Astro.url.pathname} />
+
+  <!-- Security Headers (CSP inline for static sites) -->
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com;"
+  />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+</head>

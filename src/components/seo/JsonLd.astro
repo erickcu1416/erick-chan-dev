@@ -1,0 +1,74 @@
+---
+import { getCurrentLocale, t } from '@i18n/index';
+
+interface Props {
+  type?: 'person' | 'organization' | 'website';
+}
+
+const { type = 'person' } = Astro.props;
+const locale = getCurrentLocale(Astro.url.pathname);
+const siteUrl = Astro.site?.toString() || 'https://erickchan.dev';
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Erick Chan',
+  url: siteUrl,
+  image: `${siteUrl}/android-chrome-512x512.png`,
+  jobTitle: locale === 'es' ? 'Desarrollador Profesional' : 'Professional Developer',
+  description: t('site.description', locale),
+  sameAs: [
+    'https://github.com/erickchan',
+    'https://linkedin.com/in/erickchan',
+  ],
+  knowsAbout: [
+    'Web Development',
+    'Mobile App Development',
+    'SEO',
+    'UI/UX Design',
+    'React',
+    'TypeScript',
+  ],
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Erick Chan',
+  url: siteUrl,
+  logo: `${siteUrl}/android-chrome-512x512.png`,
+  description: t('site.description', locale),
+  priceRange: '$$',
+  areaServed: 'Worldwide',
+  serviceType: ['Web Development', 'Mobile App Development', 'SEO', 'UI/UX Design'],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Mexico City',
+    addressCountry: 'MX',
+  },
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: t('site.title', locale),
+  url: siteUrl,
+  description: t('site.description', locale),
+  inLanguage: locale === 'es' ? 'es-MX' : 'en-US',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${siteUrl}/search?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const schemas = {
+  person: personSchema,
+  organization: organizationSchema,
+  website: websiteSchema,
+};
+
+const selectedSchema = schemas[type];
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(selectedSchema)} />

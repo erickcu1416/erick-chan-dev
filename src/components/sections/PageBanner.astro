@@ -1,0 +1,88 @@
+---
+import { getCurrentLocale, t, getLocalizedPath } from '@i18n/index';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
+const locale = getCurrentLocale(Astro.url.pathname);
+---
+
+<section class="page-banner-area rel z-1">
+  <div class="container">
+    <div class="banner-inner text-center">
+      {subtitle && <span class="subtitle">{subtitle}</span>}
+      <h1>{title}</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center">
+          <li class="breadcrumb-item">
+            <a href={getLocalizedPath('/', locale)}>{t('nav.home', locale)}</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">{title}</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<style>
+  .page-banner-area {
+    padding: 180px 0 100px;
+    background: var(--ridda-heading-color);
+    position: relative;
+  }
+
+  .banner-inner {
+    color: white;
+  }
+
+  .banner-inner h1 {
+    color: white;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    display: inline-block;
+    padding: 5px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: var(--ridda-primary-color);
+  }
+
+  .breadcrumb {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb-item {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .breadcrumb-item a:hover {
+    color: var(--ridda-primary-color);
+  }
+
+  .breadcrumb-item.active {
+    color: var(--ridda-primary-color);
+  }
+
+  .breadcrumb-item + .breadcrumb-item::before {
+    content: '/';
+    padding-right: 0.5rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+</style>

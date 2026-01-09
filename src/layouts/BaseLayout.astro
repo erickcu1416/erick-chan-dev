@@ -1,0 +1,129 @@
+---
+import Head from '@components/seo/Head.astro';
+import JsonLd from '@components/seo/JsonLd.astro';
+import Header from '@components/common/Header.astro';
+import Footer from '@components/common/Footer.astro';
+import '@assets/styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+  type?: 'website' | 'article' | 'profile';
+  noindex?: boolean;
+  jsonLdType?: 'person' | 'organization' | 'website';
+}
+
+const {
+  title,
+  description,
+  image,
+  canonical,
+  type = 'website',
+  noindex = false,
+  jsonLdType = 'person',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={Astro.currentLocale || 'es'}>
+  <Head
+    title={title}
+    description={description}
+    image={image}
+    canonical={canonical}
+    type={type}
+    noindex={noindex}
+  />
+  <body class="dark-version">
+    <div class="page-wrapper">
+      <!-- Preloader -->
+      <div class="preloader">
+        <div class="custom-loader"></div>
+      </div>
+
+      <Header />
+
+      <main>
+        <slot />
+      </main>
+
+      <Footer />
+
+      <!-- Scroll to Top -->
+      <button class="scroll-top scroll-to-target" data-target="html" aria-label="Scroll to top">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m18 15-6-6-6 6"></path>
+        </svg>
+      </button>
+    </div>
+
+    <JsonLd type={jsonLdType} />
+
+    <script>
+      // Preloader
+      window.addEventListener('load', () => {
+        const preloader = document.querySelector('.preloader');
+        if (preloader) {
+          setTimeout(() => {
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+              preloader.style.display = 'none';
+            }, 500);
+          }, 200);
+        }
+      });
+
+      // Header scroll
+      const header = document.querySelector('.main-header');
+      const scrollTop = document.querySelector('.scroll-top');
+
+      function handleScroll() {
+        const scrollY = window.scrollY;
+
+        if (header) {
+          if (scrollY >= 100) {
+            header.classList.add('fixed-header');
+          } else {
+            header.classList.remove('fixed-header');
+          }
+        }
+
+        if (scrollTop) {
+          if (scrollY >= 250) {
+            scrollTop.classList.add('show');
+          } else {
+            scrollTop.classList.remove('show');
+          }
+        }
+      }
+
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
+
+      // Scroll to top
+      scrollTop?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Mobile menu toggle
+      const navbarToggle = document.querySelector('.navbar-toggle');
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+
+      navbarToggle?.addEventListener('click', () => {
+        navbarCollapse?.classList.toggle('show');
+      });
+    </script>
+  </body>
+</html>

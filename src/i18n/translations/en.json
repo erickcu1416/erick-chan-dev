@@ -1,0 +1,140 @@
+{
+  "site": {
+    "title": "Erick Chan - Professional Developer",
+    "description": "Professional developer specialized in web development, mobile apps, and high-impact digital solutions.",
+    "keywords": "web developer, mobile development, applications, SEO, UI/UX, Mexico"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "useCases": "Use Cases",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Start Project"
+  },
+  "hero": {
+    "title": "Building Digital Solutions",
+    "subtitle": "Web development is a critical aspect of creating an effective online presence. A well-designed website not only reflects your brand's identity but also enhances user experience.",
+    "cta": "Explore Projects",
+    "trustedClients": "Trusted Clients"
+  },
+  "counter": {
+    "projects": "Projects Completed",
+    "clients": "Happy Customers",
+    "experience": "Years of Experience",
+    "projectsDesc": "Web and mobile application development",
+    "clientsDesc": "Happy businesses and entrepreneurs",
+    "experienceDesc": "Creating digital solutions"
+  },
+  "about": {
+    "subtitle": "About Me",
+    "title": "Transforming Ideas into Digital Reality with Innovative Technology",
+    "description": "I specialize in creating visually stunning and highly functional websites that help businesses stand out in the digital world. My passion lies in developing solutions that deliver results.",
+    "items": {
+      "design": "Digital Product Design",
+      "seo": "SEO Optimization",
+      "web": "Web Development",
+      "mobile": "Mobile Apps Design"
+    },
+    "cta": "Explore Projects",
+    "circles": {
+      "development": "Development",
+      "webDesign": "Web Design",
+      "mobileApps": "Mobile Apps"
+    }
+  },
+  "services": {
+    "subtitle": "Services",
+    "title": "Creative & Modern Services",
+    "webDesign": "Web Design",
+    "branding": "Branding",
+    "seo": "SEO",
+    "motionDesign": "Motion Design",
+    "animation": "3D Animation"
+  },
+  "workProcess": {
+    "subtitle": "How It Works",
+    "title": "Step by Step Working Process",
+    "steps": {
+      "discovery": {
+        "title": "Discovery & Strategy",
+        "description": "We begin by understanding your brand, goals, and target audience"
+      },
+      "design": {
+        "title": "Design & Prototyping",
+        "description": "We create visual designs and interactive prototypes"
+      },
+      "development": {
+        "title": "Development & Testing",
+        "description": "We build your solution with clean code and thorough testing"
+      },
+      "launch": {
+        "title": "Launch & Support",
+        "description": "We deploy your project and provide ongoing support"
+      }
+    }
+  },
+  "projects": {
+    "subtitle": "Popular Works",
+    "title": "Explore Our Latest Projects",
+    "cta": "Explore Projects",
+    "categories": {
+      "all": "All",
+      "web": "Web",
+      "mobile": "Mobile",
+      "design": "Design"
+    }
+  },
+  "testimonials": {
+    "subtitle": "Testimonials",
+    "title": "What Our Clients Say",
+    "trustedBy": "Trusted by industry leaders"
+  },
+  "cta": {
+    "title": "Get In Touch and Start Growing Your Business Today",
+    "subtitle": "Have any questions? Don't hesitate to contact us!",
+    "button": "Get Started"
+  },
+  "footer": {
+    "description": "High-quality content at the heart of a successful marketing strategy.",
+    "location": {
+      "title": "Location",
+      "address": "Mexico City, Mexico"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "email": "contact@erickchan.dev",
+      "phone": "+52 (55) 1234 5678"
+    },
+    "social": {
+      "title": "Follow Us"
+    },
+    "newsletter": {
+      "placeholder": "Email Address",
+      "button": "Subscribe"
+    },
+    "copyright": "All rights reserved.",
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use",
+      "faq": "FAQ"
+    }
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you are looking for does not exist or has been moved.",
+    "button": "Back to Home"
+  },
+  "contact": {
+    "subtitle": "Contact",
+    "title": "Get In Touch",
+    "description": "Have a project in mind? Let's talk about how I can help you.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+# Robots.txt for erickchan.dev
+
+User-agent: *
+Allow: /
+
+# Disallow admin/API paths
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://erickchan.dev/sitemap-index.xml

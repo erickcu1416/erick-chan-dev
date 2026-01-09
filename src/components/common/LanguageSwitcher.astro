@@ -1,0 +1,57 @@
+---
+import { getCurrentLocale, languages, getLocalizedPath } from '@i18n/index';
+
+const currentLocale = getCurrentLocale(Astro.url.pathname);
+const basePath = Astro.url.pathname.replace(/^\/(es|en)/, '');
+
+const otherLocale = currentLocale === 'es' ? 'en' : 'es';
+const otherPath = getLocalizedPath(basePath || '/', otherLocale);
+---
+
+<a
+  href={otherPath}
+  class="language-switcher"
+  aria-label={`Switch to ${languages[otherLocale]}`}
+  title={languages[otherLocale]}
+>
+  <span class="current-lang">{currentLocale.toUpperCase()}</span>
+  <span class="separator">/</span>
+  <span class="other-lang">{otherLocale.toUpperCase()}</span>
+</a>
+
+<style>
+  .language-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .language-switcher:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--ridda-primary-color);
+  }
+
+  .current-lang {
+    color: var(--ridda-primary-color);
+  }
+
+  .separator {
+    opacity: 0.5;
+  }
+
+  .other-lang {
+    opacity: 0.7;
+  }
+
+  .language-switcher:hover .other-lang {
+    opacity: 1;
+  }
+</style>
