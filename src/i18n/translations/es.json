@@ -4,6 +4,28 @@
     "description": "Desarrollador profesional especializado en desarrollo web, aplicaciones móviles y soluciones digitales de alto impacto.",
     "keywords": "desarrollador web, desarrollo móvil, aplicaciones, SEO, UI/UX, México"
   },
+  "meta": {
+    "home": {
+      "title": "Erick Chan - Desarrollo Web & Mobile | Cancún",
+      "description": "Desarrollo sistemas, plataformas y productos digitales a medida. Especializado en web, móvil, e-commerce y automatización con IA. Cancún, México."
+    },
+    "services": {
+      "title": "Servicios de Desarrollo - Erick Chan",
+      "description": "Sistemas web a medida, automatización con IA, e-commerce, apps móviles y consultoría técnica. Soluciones digitales profesionales en Cancún, México."
+    },
+    "useCases": {
+      "title": "Casos de Uso y Proyectos - Erick Chan",
+      "description": "Ejemplos de proyectos: plataformas de venta de entradas, e-commerce con logística, sistemas internos empresariales y aplicaciones móviles."
+    },
+    "about": {
+      "title": "Sobre Erick Chan - Desarrollador Full-Stack",
+      "description": "Desarrollador con experiencia en proyectos para Nestlé, Uber y sector bancario. Especializado en React, Node.js, Python y soluciones con IA."
+    },
+    "contact": {
+      "title": "Contacto - Erick Chan",
+      "description": "¿Tienes un proyecto en mente? Contáctame para discutir cómo puedo ayudarte a construir tu producto digital. Cancún, México."
+    }
+  },
   "nav": {
     "home": "Inicio",
     "services": "Servicios",
@@ -128,6 +150,10 @@
         "Arquitectura de sistemas",
         "Escalamiento y mejora de productos existentes"
       ]
+    },
+    "cta": {
+      "title": "¿Listo para empezar tu proyecto?",
+      "button": "Hablemos"
     }
   },
   "useCasesPage": {
@@ -229,7 +255,27 @@
   "testimonials": {
     "subtitle": "Testimonios",
     "title": "Lo que Dicen Nuestros Clientes",
-    "trustedBy": "Confiado por líderes de la industria"
+    "trustedBy": "Confiado por líderes de la industria",
+    "items": [
+      {
+        "name": "María González",
+        "position": "CEO, TechStart México",
+        "text": "Erick transformó nuestra idea en una plataforma funcional en tiempo récord. Su expertise técnico y atención al detalle fueron fundamentales para nuestro lanzamiento exitoso.",
+        "rating": 5
+      },
+      {
+        "name": "Carlos Mendoza",
+        "position": "Director de Operaciones, LogiPro",
+        "text": "El sistema de gestión que desarrolló optimizó nuestros procesos completamente. Reducimos tiempos de operación en un 40%. Altamente recomendado.",
+        "rating": 5
+      },
+      {
+        "name": "Ana Rodríguez",
+        "position": "Fundadora, EcoShop Online",
+        "text": "Nuestro e-commerce superó las expectativas. La integración con pagos y envíos funciona perfectamente. Las ventas aumentaron 3x desde el lanzamiento.",
+        "rating": 5
+      }
+    ]
   },
   "cta": {
     "title": "Ponte en Contacto y Comienza a Crecer tu Negocio Hoy",
@@ -272,14 +318,18 @@
     "subtitle": "Contacto",
     "title": "Ponte en Contacto",
     "description": "¿Tienes un proyecto en mente? Hablemos sobre cómo puedo ayudarte.",
+    "formTitle": "Envíame un mensaje",
     "email": "hello@erickchan.dev",
     "whatsapp": "+52 998 220 3423",
     "whatsappLink": "https://wa.me/529982203423",
     "form": {
       "name": "Nombre",
+      "namePlaceholder": "Tu nombre completo",
       "email": "Correo Electrónico",
+      "emailPlaceholder": "tu@email.com",
       "subject": "Asunto",
       "message": "Mensaje",
+      "messagePlaceholder": "Cuéntame sobre tu proyecto...",
       "submit": "Enviar Mensaje",
       "sending": "Enviando...",
       "success": "¡Mensaje enviado exitosamente!",

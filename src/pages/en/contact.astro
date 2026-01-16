@@ -6,40 +6,54 @@ const locale = 'en';
 ---
 
 <PageLayout
-  title={`${t('contact.title', locale)} - Erick Chan`}
+  title={t('meta.contact.title', locale)}
+  description={t('meta.contact.description', locale)}
   bannerTitle={t('contact.title', locale)}
   bannerSubtitle={t('contact.subtitle', locale)}
 >
   <section class="contact-page bgc-black text-white py-130 rpy-100">
     <div class="container bordered-x">
+      <!-- Contact Info Header -->
+      <div class="row justify-content-center mb-60">
+        <div class="col-lg-8">
+          <div class="contact-info-header text-center">
+            <p class="mb-30">{t('contact.description', locale)}</p>
+            <div class="contact-methods">
+              <div class="contact-method">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:hello@erickchan.dev">hello@erickchan.dev</a>
+              </div>
+              <div class="contact-method">
+                <i class="fab fa-whatsapp"></i>
+                <a href="https://wa.me/529982203423" target="_blank" rel="noopener noreferrer">+52 998 220 3423</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <div class="contact-form-wrap">
-            <p class="mb-40">{t('contact.description', locale)}</p>
+            <h3 class="mb-30 text-center">{t('contact.formTitle', locale)}</h3>
             <form class="contact-form" action="#" method="POST">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="name">{t('contact.form.name', locale)}</label>
-                    <input type="text" id="name" name="name" required />
+                    <label for="name">{t('contact.form.name', locale)} <span class="text-danger">*</span></label>
+                    <input type="text" id="name" name="name" required maxlength="100" placeholder={t('contact.form.namePlaceholder', locale)} />
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="email">{t('contact.form.email', locale)}</label>
-                    <input type="email" id="email" name="email" required />
+                    <label for="email">{t('contact.form.email', locale)} <span class="text-danger">*</span></label>
+                    <input type="email" id="email" name="email" required maxlength="100" placeholder={t('contact.form.emailPlaceholder', locale)} />
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
-                    <label for="subject">{t('contact.form.subject', locale)}</label>
-                    <input type="text" id="subject" name="subject" required />
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-group">
-                    <label for="message">{t('contact.form.message', locale)}</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <label for="message">{t('contact.form.message', locale)} <span class="text-danger">*</span></label>
+                    <textarea id="message" name="message" rows="6" required maxlength="5000" placeholder={t('contact.form.messagePlaceholder', locale)}></textarea>
                   </div>
                 </div>
                 <div class="col-12">
@@ -58,11 +72,48 @@ const locale = 'en';
 </PageLayout>
 
 <style>
+  .contact-info-header {
+    margin-bottom: 40px;
+  }
+
+  .contact-methods {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-method {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+  }
+
+  .contact-method i {
+    font-size: 20px;
+    color: #007bff;
+  }
+
+  .contact-method a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .contact-method a:hover {
+    color: #007bff;
+  }
+
   .contact-form-wrap {
     background: rgba(255, 255, 255, 0.03);
     padding: 50px;
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .text-danger {
+    color: #ff4444;
   }
 
   .form-message {
@@ -81,6 +132,11 @@ const locale = 'en';
   @media (max-width: 767px) {
     .contact-form-wrap {
       padding: 30px 20px;
+    }
+
+    .contact-methods {
+      flex-direction: column;
+      gap: 15px;
     }
   }
 </style>
@@ -112,7 +168,6 @@ const locale = 'en';
         body: JSON.stringify({
           name: formData.get('name'),
           email: formData.get('email'),
-          subject: formData.get('subject'),
           message: formData.get('message')
         })
       });

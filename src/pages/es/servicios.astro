@@ -6,7 +6,8 @@ const locale = 'es';
 ---
 
 <PageLayout
-  title={`${t('servicesPage.title', locale)} - Erick Chan`}
+  title={t('meta.services.title', locale)}
+  description={t('meta.services.description', locale)}
   bannerTitle={t('servicesPage.title', locale)}
   bannerSubtitle={t('servicesPage.subtitle', locale)}
 >
@@ -109,9 +110,9 @@ const locale = 'es';
       <!-- CTA Section -->
       <div class="row justify-content-center mt-80 rmt-60">
         <div class="col-lg-8 text-center">
-          <h3 class="mb-30">¿Listo para empezar tu proyecto?</h3>
-          <a href="/es/contacto" class="theme-btn hover-primary" data-hover="Hablemos">
-            <span>Hablemos</span>
+          <h3 class="mb-30">{t('servicesPage.cta.title', locale)}</h3>
+          <a href="/es/contacto" class="theme-btn hover-primary" data-hover={t('servicesPage.cta.button', locale)}>
+            <span>{t('servicesPage.cta.button', locale)}</span>
           </a>
         </div>
       </div>

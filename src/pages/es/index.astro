@@ -1,11 +1,15 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import Testimonials from '@components/sections/Testimonials.astro';
 import { t } from '@i18n/index';
 
 const locale = 'es';
 ---
 
-<BaseLayout>
+<BaseLayout
+  title={t('meta.home.title', locale)}
+  description={t('meta.home.description', locale)}
+>
   <!-- Hero Section -->
   <section class="hero-area-four bgc-black text-white rel z-2">
     <div class="container px-xxl-0 bordered-x pt-180 rpt-90">
@@ -24,12 +28,12 @@ const locale = 'es';
             </div>
             <h5 data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="50">5+ {t('hero.trustedClients', locale)}</h5>
             <div class="trusted-clients mt-25">
-              <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="50" data-aos-offset="50" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=65&h=65&fit=crop&q=80" alt="Cliente 1" width="65" height="65" loading="lazy" />
-              <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="50" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=65&h=65&fit=crop&q=80" alt="Cliente 2" width="65" height="65" loading="lazy" />
-              <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="150" data-aos-offset="50" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=65&h=65&fit=crop&q=80" alt="Cliente 3" width="65" height="65" loading="lazy" />
-              <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="200" data-aos-offset="50" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=65&h=65&fit=crop&q=80" alt="Cliente 4" width="65" height="65" loading="lazy" />
-              <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="250" data-aos-offset="50" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=65&h=65&fit=crop&q=80" alt="Cliente 5" width="65" height="65" loading="lazy" />
-              <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="50" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=65&h=65&fit=crop&q=80" alt="Cliente 6" width="65" height="65" loading="lazy" />
+              <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="50" data-aos-offset="50" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=65&h=65&fit=crop&q=80" alt="Cliente satisfecho - Proyecto web exitoso" width="65" height="65" loading="lazy" />
+              <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="50" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=65&h=65&fit=crop&q=80" alt="Empresaria feliz con desarrollo móvil" width="65" height="65" loading="lazy" />
+              <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="150" data-aos-offset="50" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=65&h=65&fit=crop&q=80" alt="Emprendedor con e-commerce exitoso" width="65" height="65" loading="lazy" />
+              <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="200" data-aos-offset="50" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=65&h=65&fit=crop&q=80" alt="Gerente de tecnología satisfecho" width="65" height="65" loading="lazy" />
+              <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="250" data-aos-offset="50" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=65&h=65&fit=crop&q=80" alt="Cliente de desarrollo web personalizado" width="65" height="65" loading="lazy" />
+              <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="50" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=65&h=65&fit=crop&q=80" alt="Fundadora de startup con app móvil" width="65" height="65" loading="lazy" />
             </div>
           </div>
         </div>
@@ -40,7 +44,7 @@ const locale = 'es';
         <img src="/assets/images/shapes/hero-shape.png" alt="" aria-hidden="true" width="300" height="300" />
       </div>
       <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?w=800&h=900&fit=crop&q=80" alt="Desarrollo web profesional" width="800" height="900" loading="eager" />
+        <img src="https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?w=800&h=900&fit=crop&q=80" alt="Espacio de trabajo moderno para desarrollo web y programación en Cancún" width="800" height="900" loading="eager" />
       </div>
     </div>
   </section>
@@ -132,7 +136,7 @@ const locale = 'es';
       </div>
     </div>
     <div class="container bordered-x px-0">
-      <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=1260&h=500&fit=crop&q=80" alt="Acerca de Erick Chan" width="1260" height="500" loading="lazy" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50" />
+      <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=1260&h=500&fit=crop&q=80" alt="Oficina moderna de desarrollo de software - Erick Chan programador en Cancún" width="1260" height="500" loading="lazy" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50" />
     </div>
   </section>
 
@@ -150,35 +154,38 @@ const locale = 'es';
       <div class="service-limeline-item">
         <span class="number">01</span>
         <span class="h1"><a href="/es/servicios">{t('services.service1', locale)}</a></span>
-        <div class="image"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80" alt="Sistemas y plataformas a medida" /></div>
+        <div class="image"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80" alt="Desarrollo de sistemas y plataformas web a medida con React y Node.js" /></div>
         <a href="/es/servicios" class="detail-btn" aria-label={t('services.service1', locale)}><i class="far fa-arrow-right"></i></a>
       </div>
       <div class="service-limeline-item">
         <span class="number">02</span>
         <span class="h1"><a href="/es/servicios">{t('services.service2', locale)}</a></span>
-        <div class="image"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&q=80" alt="Automatización de procesos con IA" /></div>
+        <div class="image"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&q=80" alt="Automatización de procesos empresariales con inteligencia artificial y chatbots" /></div>
         <a href="/es/servicios" class="detail-btn" aria-label={t('services.service2', locale)}><i class="far fa-arrow-right"></i></a>
       </div>
       <div class="service-limeline-item">
         <span class="number">03</span>
         <span class="h1"><a href="/es/servicios">{t('services.service3', locale)}</a></span>
-        <div class="image"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&q=80" alt="E-commerce y sistemas de venta" /></div>
+        <div class="image"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&q=80" alt="Desarrollo de e-commerce y tiendas online con integración de pagos Stripe" /></div>
         <a href="/es/servicios" class="detail-btn" aria-label={t('services.service3', locale)}><i class="far fa-arrow-right"></i></a>
       </div>
       <div class="service-limeline-item">
         <span class="number">04</span>
         <span class="h1"><a href="/es/servicios">{t('services.service4', locale)}</a></span>
-        <div class="image"><img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop&q=80" alt="Websites & marketing foundations" /></div>
+        <div class="image"><img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop&q=80" alt="Desarrollo de sitios web profesionales con SEO y optimización para marketing digital" /></div>
         <a href="/es/servicios" class="detail-btn" aria-label={t('services.service4', locale)}><i class="far fa-arrow-right"></i></a>
       </div>
       <div class="service-limeline-item">
         <span class="number">05</span>
         <span class="h1"><a href="/es/servicios">{t('services.service5', locale)}</a></span>
-        <div class="image"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop&q=80" alt="Apps móviles y de escritorio" /></div>
+        <div class="image"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop&q=80" alt="Desarrollo de aplicaciones móviles iOS y Android con React Native" /></div>
         <a href="/es/servicios" class="detail-btn" aria-label={t('services.service5', locale)}><i class="far fa-arrow-right"></i></a>
       </div>
     </div>
   </section>
+
+  <!-- Testimonials Section -->
+  <Testimonials locale={locale} />
 
   <!-- CTA Section -->
   <section class="cta-area-two rel z-1">

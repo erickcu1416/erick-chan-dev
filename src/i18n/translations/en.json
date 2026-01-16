@@ -4,6 +4,28 @@
     "description": "Professional developer specialized in web development, mobile apps, and high-impact digital solutions.",
     "keywords": "web developer, mobile development, applications, SEO, UI/UX, Mexico"
   },
+  "meta": {
+    "home": {
+      "title": "Erick Chan - Web & Mobile Development | Cancún",
+      "description": "I build custom systems, platforms, and digital products. Specialized in web, mobile, e-commerce, and AI automation. Cancún, Mexico."
+    },
+    "services": {
+      "title": "Development Services - Erick Chan",
+      "description": "Custom web systems, AI automation, e-commerce, mobile apps, and technical consulting. Professional digital solutions in Cancún, Mexico."
+    },
+    "useCases": {
+      "title": "Use Cases & Projects - Erick Chan",
+      "description": "Project examples: ticketing platforms, e-commerce with logistics, internal business systems, and mobile applications."
+    },
+    "about": {
+      "title": "About Erick Chan - Full-Stack Developer",
+      "description": "Developer with experience on projects for Nestlé, Uber, and banking sector. Specialized in React, Node.js, Python, and AI solutions."
+    },
+    "contact": {
+      "title": "Contact - Erick Chan",
+      "description": "Have a project in mind? Contact me to discuss how I can help you build your digital product. Cancún, Mexico."
+    }
+  },
   "nav": {
     "home": "Home",
     "services": "Services",
@@ -128,6 +150,10 @@
         "System architecture",
         "Scaling and improvement of existing products"
       ]
+    },
+    "cta": {
+      "title": "Ready to start your project?",
+      "button": "Let's talk"
     }
   },
   "useCasesPage": {
@@ -229,7 +255,27 @@
   "testimonials": {
     "subtitle": "Testimonials",
     "title": "What Our Clients Say",
-    "trustedBy": "Trusted by industry leaders"
+    "trustedBy": "Trusted by industry leaders",
+    "items": [
+      {
+        "name": "María González",
+        "position": "CEO, TechStart México",
+        "text": "Erick transformed our idea into a functional platform in record time. His technical expertise and attention to detail were fundamental to our successful launch.",
+        "rating": 5
+      },
+      {
+        "name": "Carlos Mendoza",
+        "position": "Operations Director, LogiPro",
+        "text": "The management system he developed completely optimized our processes. We reduced operation times by 40%. Highly recommended.",
+        "rating": 5
+      },
+      {
+        "name": "Ana Rodríguez",
+        "position": "Founder, EcoShop Online",
+        "text": "Our e-commerce exceeded expectations. The integration with payments and shipping works perfectly. Sales increased 3x since launch.",
+        "rating": 5
+      }
+    ]
   },
   "cta": {
     "title": "Get In Touch and Start Growing Your Business Today",
@@ -272,14 +318,18 @@
     "subtitle": "Contact",
     "title": "Get In Touch",
     "description": "Have a project in mind? Let's talk about how I can help you.",
+    "formTitle": "Send me a message",
     "email": "hello@erickchan.dev",
     "whatsapp": "+52 998 220 3423",
     "whatsappLink": "https://wa.me/529982203423",
     "form": {
       "name": "Name",
+      "namePlaceholder": "Your full name",
       "email": "Email",
+      "emailPlaceholder": "your@email.com",
       "subject": "Subject",
       "message": "Message",
+      "messagePlaceholder": "Tell me about your project...",
       "submit": "Send Message",
       "sending": "Sending...",
       "success": "Message sent successfully!",
