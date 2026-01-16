@@ -13,7 +13,7 @@
     "cta": "Iniciar Proyecto"
   },
   "hero": {
-    "title": "Construyo productos digitales que sí funcionan",
+    "title": "Construyo productos que funcionan",
     "subtitle": "Desarrollo sistemas, plataformas y productos digitales a medida para negocios que quieren escalar, automatizar y vender mejor.",
     "tagline": "De idea a producto real, sin humo",
     "cta": "Ver servicios",
@@ -53,11 +53,11 @@
   "services": {
     "subtitle": "Servicios",
     "title": "Servicios principales",
-    "webDesign": "Diseño Web",
-    "branding": "Branding",
-    "seo": "SEO",
-    "motionDesign": "Motion Design",
-    "animation": "Animación 3D",
+    "service1": "Sistemas a Medida",
+    "service2": "Automatización con IA",
+    "service3": "E-commerce",
+    "service4": "Websites Profesionales",
+    "service5": "Apps Móviles",
     "list": [
       "Sistemas y plataformas a medida",
       "Automatización de procesos con IA",

@@ -3,7 +3,7 @@ import Head from '@components/seo/Head.astro';
 import JsonLd from '@components/seo/JsonLd.astro';
 import Header from '@components/common/Header.astro';
 import Footer from '@components/common/Footer.astro';
-import WhatsAppButton from '@components/common/WhatsAppButton.astro';
+import WhatsAppWidget from '@components/common/WhatsAppWidget.astro';
 import '@assets/styles/global.css';
 
 interface Props {
@@ -53,7 +53,7 @@ const {
       <Footer />
     </div>
 
-    <WhatsAppButton />
+    <WhatsAppWidget />
 
     <JsonLd type={jsonLdType} />
 

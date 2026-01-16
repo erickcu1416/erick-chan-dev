@@ -1,0 +1,233 @@
+---
+import { getCurrentLocale } from '@i18n/index';
+
+const whatsappNumber = '529982203423';
+
+// Get current page context for context-aware messages
+const pathname = Astro.url.pathname;
+const locale = getCurrentLocale(pathname);
+
+// Context-aware message based on current page
+let message = locale === 'es'
+  ? 'Hola, me interesa conocer más sobre tus servicios'
+  : 'Hi, I\'m interested in learning more about your services';
+
+if (pathname.includes('servicios') || pathname.includes('services')) {
+  message = locale === 'es'
+    ? 'Hola, quiero consultar sobre un servicio específico'
+    : 'Hi, I want to ask about a specific service';
+} else if (pathname.includes('contacto') || pathname.includes('contact')) {
+  message = locale === 'es'
+    ? 'Hola, quiero cotizar un proyecto'
+    : 'Hi, I want to get a quote for a project';
+} else if (pathname.includes('casos-de-uso') || pathname.includes('use-cases')) {
+  message = locale === 'es'
+    ? 'Hola, me interesa un caso de uso similar'
+    : 'Hi, I\'m interested in a similar use case';
+}
+
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+// Tooltip message based on locale
+const tooltipMessage = locale === 'es'
+  ? '¿Necesitas ayuda? Escríbeme 👋'
+  : 'Need help? Message me 👋';
+---
+
+<div class="whatsapp-widget">
+  <!-- Main Button -->
+  <a
+    href={whatsappLink}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="whatsapp-button"
+    aria-label={locale === 'es' ? 'Contactar por WhatsApp' : 'Contact via WhatsApp'}
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Proactive Tooltip (appears after delay) -->
+  <div class="whatsapp-tooltip" id="whatsapp-tooltip">
+    <div class="tooltip-content">
+      <p>{tooltipMessage}</p>
+      <button class="tooltip-close" aria-label={locale === 'es' ? 'Cerrar' : 'Close'}>×</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .whatsapp-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+  }
+
+  .whatsapp-button {
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: white;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+    position: relative;
+  }
+
+  .whatsapp-button:hover {
+    background: #128C7E;
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+    color: white;
+  }
+
+  .whatsapp-tooltip {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+  }
+
+  .whatsapp-tooltip.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .tooltip-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .tooltip-content p {
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .tooltip-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #999;
+    cursor: pointer;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+  }
+
+  .tooltip-close:hover {
+    color: #333;
+  }
+
+  /* Tooltip arrow */
+  .whatsapp-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid white;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+      box-shadow: 0 4px 30px rgba(37, 211, 102, 0.7);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .whatsapp-widget {
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .whatsapp-button {
+      width: 50px;
+      height: 50px;
+      font-size: 28px;
+    }
+
+    .whatsapp-tooltip {
+      min-width: 180px;
+      padding: 10px 12px;
+    }
+
+    .tooltip-content p {
+      font-size: 13px;
+    }
+  }
+</style>
+
+<script>
+  // Show tooltip after 5 seconds on page load
+  let tooltipShown = false;
+
+  function showTooltip() {
+    if (tooltipShown) return;
+
+    const tooltip = document.getElementById('whatsapp-tooltip');
+    if (tooltip) {
+      tooltip.classList.add('show');
+      tooltipShown = true;
+
+      // Auto-hide after 10 seconds
+      setTimeout(() => {
+        tooltip.classList.remove('show');
+      }, 10000);
+    }
+  }
+
+  // Show after 5 seconds
+  setTimeout(showTooltip, 5000);
+
+  // Close button functionality
+  const closeBtn = document.querySelector('.tooltip-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const tooltip = document.getElementById('whatsapp-tooltip');
+      if (tooltip) {
+        tooltip.classList.remove('show');
+      }
+    });
+  }
+
+  // Don't show again if user clicks WhatsApp button
+  const whatsappBtn = document.querySelector('.whatsapp-button');
+  if (whatsappBtn) {
+    whatsappBtn.addEventListener('click', () => {
+      tooltipShown = true;
+      const tooltip = document.getElementById('whatsapp-tooltip');
+      if (tooltip) {
+        tooltip.classList.remove('show');
+      }
+    });
+  }
+</script>

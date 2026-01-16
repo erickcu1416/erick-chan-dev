@@ -13,7 +13,7 @@
     "cta": "Start Project"
   },
   "hero": {
-    "title": "I build digital products that actually work",
+    "title": "I build products that work",
     "subtitle": "I develop custom systems, platforms, and digital products for businesses that want to scale, automate, and sell better.",
     "tagline": "From idea to real product, no fluff",
     "cta": "View services",
@@ -53,11 +53,11 @@
   "services": {
     "subtitle": "Services",
     "title": "Main services",
-    "webDesign": "Web Design",
-    "branding": "Branding",
-    "seo": "SEO",
-    "motionDesign": "Motion Design",
-    "animation": "3D Animation",
+    "service1": "Custom Systems",
+    "service2": "AI Automation",
+    "service3": "E-commerce",
+    "service4": "Professional Websites",
+    "service5": "Mobile Apps",
     "list": [
       "Custom systems and platforms",
       "AI process automation",
