@@ -2,15 +2,13 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
-import node from '@astrojs/node';
+import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://erickchan.dev',
   output: 'server',
-  adapter: node({
-    mode: 'standalone'
-  }),
+  adapter: vercel(),
 
   i18n: {
     defaultLocale: 'es',
