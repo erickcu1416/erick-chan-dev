@@ -22,6 +22,12 @@ const currentYear = new Date().getFullYear();
         <span class="marquee-item">Get In Touch</span>
         <span class="marquee-item">_</span>
       </span>
+      <span class="marquee-inner left">
+        <span class="marquee-item">Get In Touch</span>
+        <span class="marquee-item">_</span>
+        <span class="marquee-item">Get In Touch</span>
+        <span class="marquee-item">_</span>
+      </span>
     </span>
   </div>
 
@@ -43,7 +49,7 @@ const currentYear = new Date().getFullYear();
           </div>
           <p>{t('footer.description', locale)}</p>
           <form class="newsletter-form mt-25" action="#" method="POST">
-            <label for="news-email" class="visually-hidden">{t('footer.newsletter.placeholder', locale)}</label>
+            <label for="news-email"><i class="fas fa-envelope"></i></label>
             <input
               id="news-email"
               type="email"
@@ -135,6 +141,10 @@ const currentYear = new Date().getFullYear();
           </ul>
         </div>
       </div>
+      <!-- Scroll Top Button -->
+      <button class="scroll-top scroll-to-target" data-target="html" aria-label="Scroll to top">
+        <i class="far fa-arrow-up"></i>
+      </button>
     </div>
   </div>
 

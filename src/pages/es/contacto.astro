@@ -43,9 +43,10 @@ const locale = 'es';
                   </div>
                 </div>
                 <div class="col-12">
-                  <button type="submit" class="theme-btn" data-hover={t('contact.form.submit', locale)}>
-                    <span>{t('contact.form.submit', locale)}</span>
+                  <button type="submit" class="theme-btn submit-btn" data-hover={t('contact.form.submit', locale)}>
+                    <span class="button-text">{t('contact.form.submit', locale)}</span>
                   </button>
+                  <div class="form-message mt-3"></div>
                 </div>
               </div>
             </form>
@@ -64,9 +65,79 @@ const locale = 'es';
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
+  .form-message {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .form-message.success {
+    color: #25D366;
+  }
+
+  .form-message.error {
+    color: #ff4444;
+  }
+
   @media (max-width: 767px) {
     .contact-form-wrap {
       padding: 30px 20px;
     }
   }
 </style>
+
+<script>
+  const form = document.querySelector('.contact-form') as HTMLFormElement;
+  const submitBtn = form?.querySelector('.submit-btn') as HTMLButtonElement;
+  const buttonText = submitBtn?.querySelector('.button-text') as HTMLElement;
+  const formMessage = form?.querySelector('.form-message') as HTMLElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Disable button and show loading state
+    if (submitBtn) submitBtn.disabled = true;
+    if (buttonText) buttonText.textContent = 'Enviando...';
+    if (formMessage) {
+      formMessage.textContent = '';
+      formMessage.className = 'form-message mt-3';
+    }
+
+    try {
+      const formData = new FormData(form);
+      // Use absolute URL to avoid i18n routing issues
+      const apiUrl = `${window.location.origin}/api/contact`;
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          email: formData.get('email'),
+          subject: formData.get('subject'),
+          message: formData.get('message')
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        if (formMessage) {
+          formMessage.textContent = '¡Mensaje enviado exitosamente!';
+          formMessage.classList.add('success');
+        }
+        form.reset();
+      } else {
+        throw new Error(data.error || 'Error al enviar el mensaje');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      if (formMessage) {
+        formMessage.textContent = 'Error al enviar el mensaje. Intenta de nuevo.';
+        formMessage.classList.add('error');
+      }
+    } finally {
+      // Re-enable button
+      if (submitBtn) submitBtn.disabled = false;
+      if (buttonText) buttonText.textContent = 'Enviar Mensaje';
+    }
+  });
+</script>

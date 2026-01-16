@@ -13,9 +13,11 @@
     "cta": "Iniciar Proyecto"
   },
   "hero": {
-    "title": "Construyendo Soluciones Digitales",
-    "subtitle": "El desarrollo web es un aspecto crítico para crear una presencia en línea efectiva. Un sitio web bien diseñado no solo refleja la identidad de tu marca, sino que también mejora la experiencia del usuario.",
-    "cta": "Explorar Proyectos",
+    "title": "Construyo productos digitales que sí funcionan",
+    "subtitle": "Desarrollo sistemas, plataformas y productos digitales a medida para negocios que quieren escalar, automatizar y vender mejor.",
+    "tagline": "De idea a producto real, sin humo",
+    "cta": "Ver servicios",
+    "ctaSecondary": "Hablemos",
     "trustedClients": "Clientes de Confianza"
   },
   "counter": {
@@ -27,9 +29,9 @@
     "experienceDesc": "Creando soluciones digitales"
   },
   "about": {
-    "subtitle": "Sobre Mí",
+    "subtitle": "Qué hago",
     "title": "Transformando Ideas en Realidad Digital con Tecnología Innovadora",
-    "description": "Me especializo en crear sitios web visualmente impactantes y altamente funcionales que ayudan a las empresas a destacar en el mundo digital. Mi pasión está en desarrollar soluciones que generen resultados.",
+    "description": "Ayudo a empresas, startups y emprendedores a diseñar, construir y escalar productos digitales, combinando desarrollo, experiencia de usuario y automatización. Trabajo desde landing pages y e-commerce hasta plataformas completas, apps móviles y sistemas internos para operación, ventas y logística.",
     "items": {
       "design": "Diseño de Producto Digital",
       "seo": "Optimización SEO",
@@ -43,14 +45,153 @@
       "mobileApps": "Apps Móviles"
     }
   },
+  "experience": {
+    "title": "Experiencia",
+    "description": "He colaborado en proyectos entregados para empresas y equipos que trabajan con marcas como Nestlé, Uber, Elektra y sector bancario, a través de consultorías tecnológicas. También he construido productos desde cero, liderando la parte técnica y funcional.",
+    "disclaimer": "Los logos mostrados representan colaboraciones a través de proyectos de consultoría."
+  },
   "services": {
     "subtitle": "Servicios",
-    "title": "Servicios Creativos y Modernos",
+    "title": "Servicios principales",
     "webDesign": "Diseño Web",
     "branding": "Branding",
     "seo": "SEO",
     "motionDesign": "Motion Design",
-    "animation": "Animación 3D"
+    "animation": "Animación 3D",
+    "list": [
+      "Sistemas y plataformas a medida",
+      "Automatización de procesos con IA",
+      "E-commerce y sistemas de venta",
+      "Websites & marketing foundations",
+      "Apps móviles y de escritorio"
+    ]
+  },
+  "servicesPage": {
+    "title": "Servicios",
+    "subtitle": "Qué puedo hacer por tu negocio",
+    "customSystems": {
+      "title": "Custom Web Systems & Platforms",
+      "description": "Sistemas a medida para tu negocio",
+      "items": [
+        "Sistemas a medida para tu negocio",
+        "Dashboards y paneles administrativos",
+        "Plataformas internas y externas",
+        "APIs y backend",
+        "Frameworks UI (Material, Tailwind, etc.)"
+      ]
+    },
+    "aiAutomation": {
+      "title": "AI Automation & Intelligent Systems",
+      "description": "Automatización inteligente para tu operación",
+      "items": [
+        "Automatización de procesos de negocio",
+        "Chatbots y asistentes con IA",
+        "Flujos inteligentes para ventas, soporte y operaciones",
+        "Integración de modelos de IA en sistemas existentes"
+      ]
+    },
+    "ecommerce": {
+      "title": "E-commerce & Payment Integrations",
+      "description": "Soluciones completas de venta en línea",
+      "items": [
+        "Tiendas en línea personalizadas",
+        "Sistemas de venta de entradas (eventos, campamentos, experiencias)",
+        "Pagos con Stripe y otros gateways",
+        "Facturación, pedidos y logística",
+        "Sistemas de delivery"
+      ]
+    },
+    "websites": {
+      "title": "Websites & Marketing Foundations",
+      "description": "Tu presencia digital profesional",
+      "items": [
+        "Websites profesionales",
+        "SEO técnico",
+        "Google Ads setup",
+        "Landing pages optimizadas"
+      ]
+    },
+    "mobile": {
+      "title": "Mobile & Desktop Applications",
+      "description": "Apps nativas y multiplataforma",
+      "items": [
+        "Apps iOS y Android",
+        "Apps internas para empresas",
+        "Apps para clientes finales"
+      ]
+    },
+    "consulting": {
+      "title": "Technical Consulting",
+      "description": "Asesoría técnica especializada",
+      "items": [
+        "Análisis de proyectos",
+        "Arquitectura de sistemas",
+        "Escalamiento y mejora de productos existentes"
+      ]
+    }
+  },
+  "useCasesPage": {
+    "title": "Casos de Uso",
+    "subtitle": "Ejemplos de lo que puedo construir para ti",
+    "ticketPlatform": {
+      "title": "Plataforma de venta de entradas",
+      "description": "Sistema para vender y administrar entradas a eventos, campamentos, experiencias o tours.",
+      "features": [
+        "Venta online",
+        "Control de accesos",
+        "Reportes de ventas",
+        "Integración con pagos (Stripe, MercadoPago, etc.)",
+        "Panel de administración"
+      ]
+    },
+    "ecommerceLogistics": {
+      "title": "E-commerce con logística",
+      "description": "Tienda en línea completa con integración de inventario, pagos, facturación y envíos.",
+      "features": [
+        "Catálogo de productos",
+        "Carrito de compra",
+        "Pasarela de pagos",
+        "Sistema de delivery o envíos",
+        "Facturación automática"
+      ]
+    },
+    "internalSystems": {
+      "title": "Sistemas internos para empresas",
+      "description": "Plataformas para gestión interna, operación, ventas o logística.",
+      "features": [
+        "Dashboards personalizados",
+        "Gestión de clientes",
+        "Control de inventario",
+        "Reportes y métricas",
+        "Automatización de flujos"
+      ]
+    },
+    "mobileApps": {
+      "title": "Apps móviles",
+      "description": "Apps nativas o multiplataforma para iOS y Android.",
+      "features": [
+        "Apps para clientes finales",
+        "Apps internas para empresas",
+        "Integración con sistemas existentes",
+        "Notificaciones push",
+        "Offline-first"
+      ]
+    }
+  },
+  "aboutPage": {
+    "title": "Sobre mí",
+    "subtitle": "Quién soy y qué hago",
+    "bio": "Soy Erick Chan, desarrollador de software con experiencia en web, mobile, e-commerce y automatización con IA. He trabajado con empresas y startups ayudándolas a diseñar, construir y escalar productos digitales.",
+    "experience": "He colaborado en proyectos entregados para empresas y equipos que trabajan con marcas como Nestlé, Uber, Elektra y sector bancario, a través de consultorías tecnológicas. También he construido productos desde cero, liderando la parte técnica y funcional.",
+    "location": "Cancún, Quintana Roo, México",
+    "tech": {
+      "title": "Tecnologías & herramientas",
+      "frontend": "Frontend moderno (React, Next.js, Astro, Tailwind)",
+      "backend": "Backend & APIs (Node.js, Python, PostgreSQL, MongoDB)",
+      "mobile": "Mobile (React Native, Flutter)",
+      "ai": "IA & Automatización (OpenAI, Claude, Langchain)",
+      "cloud": "Cloud & DevOps (Vercel, AWS, Docker)"
+    }
   },
   "workProcess": {
     "subtitle": "Cómo Funciona",
@@ -96,15 +237,17 @@
     "button": "Comenzar"
   },
   "footer": {
-    "description": "Contenido de alta calidad en el corazón de una estrategia de marketing exitosa.",
+    "description": "Desarrollo productos digitales que sí funcionan. Sistemas, plataformas y apps a medida.",
     "location": {
       "title": "Ubicación",
-      "address": "Ciudad de México, México"
+      "address": "Cancún, Quintana Roo, México"
     },
     "contact": {
       "title": "Contacto",
-      "email": "contacto@erickchan.dev",
-      "phone": "+52 (55) 1234 5678"
+      "email": "hello@erickchan.dev",
+      "phone": "+52 998 220 3423",
+      "whatsapp": "+52 998 220 3423",
+      "whatsappLink": "https://wa.me/529982203423"
     },
     "social": {
       "title": "Síguenos"
@@ -129,12 +272,18 @@
     "subtitle": "Contacto",
     "title": "Ponte en Contacto",
     "description": "¿Tienes un proyecto en mente? Hablemos sobre cómo puedo ayudarte.",
+    "email": "hello@erickchan.dev",
+    "whatsapp": "+52 998 220 3423",
+    "whatsappLink": "https://wa.me/529982203423",
     "form": {
       "name": "Nombre",
       "email": "Correo Electrónico",
       "subject": "Asunto",
       "message": "Mensaje",
-      "submit": "Enviar Mensaje"
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado exitosamente!",
+      "error": "Error al enviar el mensaje. Intenta de nuevo."
     }
   }
 }

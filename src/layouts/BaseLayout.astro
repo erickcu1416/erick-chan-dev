@@ -3,6 +3,7 @@ import Head from '@components/seo/Head.astro';
 import JsonLd from '@components/seo/JsonLd.astro';
 import Header from '@components/common/Header.astro';
 import Footer from '@components/common/Footer.astro';
+import WhatsAppButton from '@components/common/WhatsAppButton.astro';
 import '@assets/styles/global.css';
 
 interface Props {
@@ -50,24 +51,9 @@ const {
       </main>
 
       <Footer />
-
-      <!-- Scroll to Top -->
-      <button class="scroll-top scroll-to-target" data-target="html" aria-label="Scroll to top">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="m18 15-6-6-6 6"></path>
-        </svg>
-      </button>
     </div>
+
+    <WhatsAppButton />
 
     <JsonLd type={jsonLdType} />
 
@@ -79,7 +65,7 @@ const {
           setTimeout(() => {
             preloader.classList.add('fade-out');
             setTimeout(() => {
-              preloader.style.display = 'none';
+              (preloader as HTMLElement).style.display = 'none';
             }, 500);
           }, 200);
         }
@@ -109,7 +95,7 @@ const {
         }
       }
 
-      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('scroll', handleScroll, { passive: true });
       handleScroll();
 
       // Scroll to top
@@ -123,6 +109,100 @@ const {
 
       navbarToggle?.addEventListener('click', () => {
         navbarCollapse?.classList.toggle('show');
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        if (!target.closest('.main-menu') && navbarCollapse?.classList.contains('show')) {
+          navbarCollapse?.classList.remove('show');
+        }
+      });
+
+      // Counter Animation with Intersection Observer
+      function initCounterAnimation() {
+        const counterItems = document.querySelectorAll('.counter-text-wrap');
+        if (!counterItems.length) return;
+
+        function easeOutQuad(t: number): number {
+          return t * (2 - t);
+        }
+
+        const animateCounter = (element: Element) => {
+          const countText = element.querySelector('.count-text') as HTMLElement | null;
+          if (!countText || element.classList.contains('counted')) return;
+
+          const target = parseInt(countText.getAttribute('data-stop') || countText.textContent || '0', 10);
+          const duration = parseInt(countText.getAttribute('data-speed') || '2000', 10);
+          const startTime = performance.now();
+
+          element.classList.add('counted');
+
+          function updateCounter(currentTime: number) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const currentValue = Math.floor(target * easeOutQuad(progress));
+
+            if (countText) {
+              countText.textContent = currentValue.toString();
+            }
+
+            if (progress < 1) {
+              requestAnimationFrame(updateCounter);
+            } else if (countText) {
+              countText.textContent = target.toString();
+            }
+          }
+
+          requestAnimationFrame(updateCounter);
+        };
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+
+        counterItems.forEach((item) => observer.observe(item));
+      }
+
+      // AOS-like animations
+      function initScrollAnimations() {
+        const animatedElements = document.querySelectorAll('[data-aos]');
+        if (!animatedElements.length) return;
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const element = entry.target as HTMLElement;
+                const delay = element.getAttribute('data-aos-delay') || '0';
+                setTimeout(() => {
+                  element.classList.add('aos-animate');
+                }, parseInt(delay, 10));
+                observer.unobserve(element);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+        );
+
+        animatedElements.forEach((element) => {
+          element.classList.add('aos-init');
+          observer.observe(element);
+        });
+      }
+
+      // Initialize on DOM ready
+      document.addEventListener('DOMContentLoaded', () => {
+        initCounterAnimation();
+        initScrollAnimations();
       });
     </script>
   </body>

@@ -6,21 +6,93 @@ const locale = 'es';
 ---
 
 <PageLayout
-  title={`${t('projects.title', locale)} - Erick Chan`}
-  bannerTitle={t('projects.title', locale)}
-  bannerSubtitle={t('projects.subtitle', locale)}
+  title={`${t('useCasesPage.title', locale)} - Erick Chan`}
+  bannerTitle={t('useCasesPage.title', locale)}
+  bannerSubtitle={t('useCasesPage.subtitle', locale)}
 >
-  <section class="projects-page bgc-black text-white py-130 rpy-100">
+  <section class="use-cases-area bgc-black text-white py-130 rpy-100">
     <div class="container bordered-x">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="coming-soon text-center">
-            <h2>Próximamente</h2>
-            <p>Esta sección está en desarrollo. Pronto podrás ver todos mis casos de uso y proyectos.</p>
-            <a href="/es/" class="theme-btn mt-30" data-hover="Volver al Inicio">
-              <span>Volver al Inicio</span>
-            </a>
+      <div class="row justify-content-center mb-60">
+        <div class="col-xl-8 col-lg-10">
+          <div class="section-title text-center">
+            <h2>{t('useCasesPage.subtitle', locale)}</h2>
           </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Ticketing Platform -->
+        <div class="col-lg-6">
+          <div class="use-case-item" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
+            <div class="use-case-icon">
+              <i class="fas fa-ticket-alt"></i>
+            </div>
+            <h3>{t('useCasesPage.ticketPlatform.title', locale)}</h3>
+            <p>{t('useCasesPage.ticketPlatform.description', locale)}</p>
+            <ul class="use-case-features">
+              {(t('useCasesPage.ticketPlatform.features', locale) as unknown as string[]).map((feature: string) => (
+                <li>{feature}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- E-commerce with Logistics -->
+        <div class="col-lg-6">
+          <div class="use-case-item" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="50">
+            <div class="use-case-icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h3>{t('useCasesPage.ecommerceLogistics.title', locale)}</h3>
+            <p>{t('useCasesPage.ecommerceLogistics.description', locale)}</p>
+            <ul class="use-case-features">
+              {(t('useCasesPage.ecommerceLogistics.features', locale) as unknown as string[]).map((feature: string) => (
+                <li>{feature}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Internal Systems -->
+        <div class="col-lg-6">
+          <div class="use-case-item" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200" data-aos-offset="50">
+            <div class="use-case-icon">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <h3>{t('useCasesPage.internalSystems.title', locale)}</h3>
+            <p>{t('useCasesPage.internalSystems.description', locale)}</p>
+            <ul class="use-case-features">
+              {(t('useCasesPage.internalSystems.features', locale) as unknown as string[]).map((feature: string) => (
+                <li>{feature}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Mobile Apps -->
+        <div class="col-lg-6">
+          <div class="use-case-item" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="50">
+            <div class="use-case-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>{t('useCasesPage.mobileApps.title', locale)}</h3>
+            <p>{t('useCasesPage.mobileApps.description', locale)}</p>
+            <ul class="use-case-features">
+              {(t('useCasesPage.mobileApps.features', locale) as unknown as string[]).map((feature: string) => (
+                <li>{feature}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="row justify-content-center mt-80 rmt-60">
+        <div class="col-lg-8 text-center">
+          <h3 class="mb-30">¿Tienes un proyecto similar en mente?</h3>
+          <a href="/es/contacto" class="theme-btn hover-primary" data-hover="Conversemos">
+            <span>Conversemos</span>
+          </a>
         </div>
       </div>
     </div>
@@ -28,21 +100,84 @@ const locale = 'es';
 </PageLayout>
 
 <style>
-  .coming-soon {
-    padding: 100px 0;
+  .use-case-item {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 100%;
+    transition: all 0.3s ease;
   }
 
-  .coming-soon h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--ridda-primary-color), var(--ridda-secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .use-case-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
   }
 
-  .coming-soon p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.125rem;
+  .use-case-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ridda-primary-color);
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 32px;
+    color: white;
+  }
+
+  .use-case-item h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--ridda-white);
+  }
+
+  .use-case-item p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+  }
+
+  .use-case-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .use-case-features li {
+    padding: 8px 0 8px 30px;
+    position: relative;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .use-case-features li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--ridda-primary-color);
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  @media (max-width: 991px) {
+    .use-case-item {
+      padding: 30px;
+      margin-bottom: 20px;
+    }
+
+    .use-case-icon {
+      width: 60px;
+      height: 60px;
+      font-size: 28px;
+    }
+
+    .use-case-item h3 {
+      font-size: 20px;
+    }
   }
 </style>

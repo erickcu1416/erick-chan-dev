@@ -12,69 +12,106 @@ const locale = 'es';
       <div class="row pt-50">
         <div class="col-xl-10">
           <div class="hero-content-four">
-            <h1>{t('hero.title', locale)}</h1>
-            <p class="hero-description">{t('hero.subtitle', locale)}</p>
-            <a href="/es/casos-de-uso" class="theme-btn mt-30 rmt-15 mb-65 rmb-30" data-hover={t('hero.cta', locale)}>
-              <span>{t('hero.cta', locale)}</span>
-            </a>
-            <h5>5+ {t('hero.trustedClients', locale)}</h5>
+            <h1 data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">{t('hero.title', locale)}</h1>
+            <p data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="50">{t('hero.subtitle', locale)}</p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200" data-aos-offset="50">
+              <a href="/es/servicios" class="theme-btn mt-30 rmt-15 mb-65 rmb-30" data-hover={t('hero.cta', locale)}>
+                <span>{t('hero.cta', locale)}</span>
+              </a>
+              <a href="/es/contacto" class="theme-btn style-two mt-30 rmt-15 mb-65 rmb-30 ms-3" data-hover={t('hero.ctaSecondary', locale)}>
+                <span>{t('hero.ctaSecondary', locale)}</span>
+              </a>
+            </div>
+            <h5 data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="50">5+ {t('hero.trustedClients', locale)}</h5>
             <div class="trusted-clients mt-25">
-              <div class="client-avatar"></div>
-              <div class="client-avatar"></div>
-              <div class="client-avatar"></div>
+              <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="50" data-aos-offset="50" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=65&h=65&fit=crop&q=80" alt="Cliente 1" width="65" height="65" loading="lazy" />
+              <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="50" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=65&h=65&fit=crop&q=80" alt="Cliente 2" width="65" height="65" loading="lazy" />
+              <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="150" data-aos-offset="50" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=65&h=65&fit=crop&q=80" alt="Cliente 3" width="65" height="65" loading="lazy" />
+              <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="200" data-aos-offset="50" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=65&h=65&fit=crop&q=80" alt="Cliente 4" width="65" height="65" loading="lazy" />
+              <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="250" data-aos-offset="50" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=65&h=65&fit=crop&q=80" alt="Cliente 5" width="65" height="65" loading="lazy" />
+              <img data-aos="fade-right" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="50" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=65&h=65&fit=crop&q=80" alt="Cliente 6" width="65" height="65" loading="lazy" />
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="hero-area-shapes">
-      <div class="shape"></div>
+      <div class="shape">
+        <img src="/assets/images/shapes/hero-shape.png" alt="" aria-hidden="true" width="300" height="300" />
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=900&fit=crop&q=80" alt="Desarrollo web profesional" width="800" height="900" loading="eager" />
+      </div>
     </div>
   </section>
 
   <!-- Counter Section -->
   <div class="counter-area bgc-black pt-120 rpt-100 rel z-1">
-    <div class="container bordered-x">
-      <div class="counter-wrap">
-        <div class="row">
-          <div class="col-md-4 col-sm-6">
-            <div class="counter-item counter-text-wrap">
-              <span class="count-text">25+</span>
-              <span class="counter-title">{t('counter.projects', locale)}</span>
-              <div class="text">{t('counter.projectsDesc', locale)}</div>
+    <div class="row gap-80 align-items-center">
+      <div class="col-xxl-5" data-aos="fade-right" data-aos-duration="1500" data-aos-offset="50">
+        <div class="counter-left-image">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=800&fit=crop&q=80" alt="Equipo de desarrollo" />
+        </div>
+      </div>
+      <div class="col-xxl-7">
+        <div class="counter-wrap br-10" data-aos="fade-left" data-aos-duration="1500" data-aos-offset="50" style="background-image: url('/assets/images/background/counter-bg-with-dots.png');">
+          <div class="row">
+            <div class="col-md-4 col-sm-6">
+              <div class="counter-item counter-text-wrap">
+                <span class="count-text k-plus" data-stop="25" data-speed="3000">0</span>
+                <span class="counter-title">{t('counter.projects', locale)}</span>
+                <div class="text">{t('counter.projectsDesc', locale)}</div>
+              </div>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-6">
-            <div class="counter-item counter-text-wrap">
-              <span class="count-text">10+</span>
-              <span class="counter-title">{t('counter.clients', locale)}</span>
-              <div class="text">{t('counter.clientsDesc', locale)}</div>
+            <div class="col-md-4 col-sm-6">
+              <div class="counter-item counter-text-wrap">
+                <span class="count-text k-plus" data-stop="10" data-speed="3000">0</span>
+                <span class="counter-title">{t('counter.clients', locale)}</span>
+                <div class="text">{t('counter.clientsDesc', locale)}</div>
+              </div>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-6">
-            <div class="counter-item counter-text-wrap">
-              <span class="count-text">5+</span>
-              <span class="counter-title">{t('counter.experience', locale)}</span>
-              <div class="text">{t('counter.experienceDesc', locale)}</div>
+            <div class="col-md-4 col-sm-6">
+              <div class="counter-item counter-text-wrap">
+                <span class="count-text plus" data-stop="5" data-speed="3000">0</span>
+                <span class="counter-title">{t('counter.experience', locale)}</span>
+                <div class="text">{t('counter.experienceDesc', locale)}</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="container text-white blank-container bordered-x"></div>
+    <div class="counter-shapes">
+      <div class="shape">
+        <img src="/assets/images/shapes/counter.png" alt="" aria-hidden="true" />
+      </div>
+      <span class="marquee-wrap">
+        <span class="marquee-inner left">
+          <span class="marquee-item">Agencia de Diseño Web</span>
+        </span>
+        <span class="marquee-inner left">
+          <span class="marquee-item">Agencia de Diseño Web</span>
+        </span>
+        <span class="marquee-inner left">
+          <span class="marquee-item">Agencia de Diseño Web</span>
+        </span>
+      </span>
     </div>
   </div>
 
   <!-- About Section -->
   <section class="about-area rel z-1">
     <div class="container bordered-x pt-130 rpt-100 pb-100">
-      <div class="row justify-content-between align-items-center">
+      <div class="row px-xl-5 justify-content-between align-items-center">
         <div class="col-xl-4 col-lg-5">
           <div class="about-circles rmb-55">
-            <div class="circle">{t('about.circles.development', locale)}</div>
-            <div class="circle mx-auto bgc-black text-white">{t('about.circles.webDesign', locale)}</div>
-            <div class="circle ms-auto bgc-primary">{t('about.circles.mobileApps', locale)}</div>
+            <div class="circle" data-aos="fade-left" data-aos-duration="1500" data-aos-offset="50">{t('about.circles.development', locale)}</div>
+            <div class="circle mx-auto bgc-black text-white" data-aos="zoom-in" data-aos-duration="1500" data-aos-offset="50">{t('about.circles.webDesign', locale)}</div>
+            <div class="circle ms-auto bgc-primary" data-aos="fade-right" data-aos-duration="1500" data-aos-offset="50">{t('about.circles.mobileApps', locale)}</div>
           </div>
         </div>
-        <div class="col-lg-7">
+        <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1500" data-aos-offset="50">
           <div class="about-content-four">
             <div class="section-title mb-40">
               <span class="subtitle mt-10 mb-15">{t('about.subtitle', locale)}</span>
@@ -94,6 +131,9 @@ const locale = 'es';
         </div>
       </div>
     </div>
+    <div class="container bordered-x px-0">
+      <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=1260&h=500&fit=crop&q=80" alt="Acerca de Erick Chan" width="1260" height="500" loading="lazy" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50" />
+    </div>
   </section>
 
   <!-- Services Section -->
@@ -101,47 +141,50 @@ const locale = 'es';
     <div class="container px-0 bordered-x bordered-top pt-130 rpt-100 pb-5">
       <div class="row justify-content-center">
         <div class="col-xl-7 col-lg-9 col-md-11">
-          <div class="section-title mb-50 text-center">
+          <div class="section-title mb-50 text-center" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
             <span class="subtitle mt-10 mb-15">{t('services.subtitle', locale)}</span>
             <h2>{t('services.title', locale)}</h2>
           </div>
         </div>
       </div>
-      <div class="service-timeline">
-        <div class="service-limeline-item">
-          <span class="number">01</span>
-          <span class="h1"><a href="/es/servicios">{t('services.webDesign', locale)}</a></span>
-          <a href="/es/servicios" class="detail-btn" aria-label={t('services.webDesign', locale)}>→</a>
-        </div>
-        <div class="service-limeline-item">
-          <span class="number">02</span>
-          <span class="h1"><a href="/es/servicios">{t('services.branding', locale)}</a></span>
-          <a href="/es/servicios" class="detail-btn" aria-label={t('services.branding', locale)}>→</a>
-        </div>
-        <div class="service-limeline-item">
-          <span class="number">03</span>
-          <span class="h1"><a href="/es/servicios">{t('services.seo', locale)}</a></span>
-          <a href="/es/servicios" class="detail-btn" aria-label={t('services.seo', locale)}>→</a>
-        </div>
-        <div class="service-limeline-item">
-          <span class="number">04</span>
-          <span class="h1"><a href="/es/servicios">{t('services.motionDesign', locale)}</a></span>
-          <a href="/es/servicios" class="detail-btn" aria-label={t('services.motionDesign', locale)}>→</a>
-        </div>
-        <div class="service-limeline-item">
-          <span class="number">05</span>
-          <span class="h1"><a href="/es/servicios">{t('services.animation', locale)}</a></span>
-          <a href="/es/servicios" class="detail-btn" aria-label={t('services.animation', locale)}>→</a>
-        </div>
+      <div class="service-limeline-item">
+        <span class="number">01</span>
+        <span class="h1"><a href="/es/servicios">{t('services.webDesign', locale)}</a></span>
+        <div class="image"><img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop&q=80" alt="Diseño Web" /></div>
+        <a href="/es/servicios" class="detail-btn" aria-label={t('services.webDesign', locale)}><i class="far fa-arrow-right"></i></a>
+      </div>
+      <div class="service-limeline-item">
+        <span class="number">02</span>
+        <span class="h1"><a href="/es/servicios">{t('services.branding', locale)}</a></span>
+        <div class="image"><img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop&q=80" alt="Branding" /></div>
+        <a href="/es/servicios" class="detail-btn" aria-label={t('services.branding', locale)}><i class="far fa-arrow-right"></i></a>
+      </div>
+      <div class="service-limeline-item">
+        <span class="number">03</span>
+        <span class="h1"><a href="/es/servicios">{t('services.seo', locale)}</a></span>
+        <div class="image"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80" alt="SEO" /></div>
+        <a href="/es/servicios" class="detail-btn" aria-label={t('services.seo', locale)}><i class="far fa-arrow-right"></i></a>
+      </div>
+      <div class="service-limeline-item">
+        <span class="number">04</span>
+        <span class="h1"><a href="/es/servicios">{t('services.motionDesign', locale)}</a></span>
+        <div class="image"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=600&fit=crop&q=80" alt="Motion Design" /></div>
+        <a href="/es/servicios" class="detail-btn" aria-label={t('services.motionDesign', locale)}><i class="far fa-arrow-right"></i></a>
+      </div>
+      <div class="service-limeline-item">
+        <span class="number">05</span>
+        <span class="h1"><a href="/es/servicios">{t('services.animation', locale)}</a></span>
+        <div class="image"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&q=80" alt="Animación 3D" /></div>
+        <a href="/es/servicios" class="detail-btn" aria-label={t('services.animation', locale)}><i class="far fa-arrow-right"></i></a>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
   <section class="cta-area-two rel z-1">
-    <div class="container px-sm-0 bordered-x py-130 rpy-100">
+    <div class="container px-sm-0 bordered-x py-130 rpy-100" style="background-image: url('/assets/images/background/cta-bg-dots.png');">
       <div class="row justify-content-center">
-        <div class="col-xl-7 col-lg-9 col-md-11 text-center">
+        <div class="col-xl-7 col-lg-9 col-md-11 text-center" data-aos="zoom-in" data-aos-duration="1500" data-aos-offset="50">
           <div class="section-title mx-xl-3 mb-30">
             <h2>{t('cta.title', locale)}</h2>
             <p>{t('cta.subtitle', locale)}</p>
@@ -155,175 +198,4 @@ const locale = 'es';
   </section>
 </BaseLayout>
 
-<style>
-  .hero-area-four {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-
-  .hero-content-four h1 {
-    font-size: clamp(2.5rem, 6vw, 5rem);
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-description {
-    font-size: 1.125rem;
-    max-width: 600px;
-    opacity: 0.9;
-    line-height: 1.8;
-  }
-
-  .trusted-clients {
-    display: flex;
-    gap: -10px;
-  }
-
-  .client-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--ridda-primary-color), var(--ridda-secondary-color));
-    border: 3px solid var(--ridda-heading-color);
-    margin-left: -10px;
-  }
-
-  .client-avatar:first-child {
-    margin-left: 0;
-  }
-
-  .counter-wrap {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding: 50px;
-  }
-
-  .counter-item {
-    text-align: center;
-    padding: 20px;
-  }
-
-  .count-text {
-    font-size: 3rem;
-    font-weight: 800;
-    color: var(--ridda-primary-color);
-    font-family: var(--ridda-heading-font);
-    display: block;
-  }
-
-  .counter-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: white;
-    display: block;
-    margin: 10px 0;
-  }
-
-  .counter-item .text {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.875rem;
-  }
-
-  .about-circles {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .about-circles .circle {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-weight: 700;
-    font-size: 1rem;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    color: white;
-  }
-
-  .about-circles .circle.bgc-primary {
-    color: var(--ridda-heading-color);
-  }
-
-  .ms-auto {
-    margin-left: auto;
-  }
-
-  .service-timeline {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .service-limeline-item {
-    display: flex;
-    align-items: center;
-    padding: 30px 40px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-  }
-
-  .service-limeline-item:hover {
-    background: rgba(255, 255, 255, 0.02);
-  }
-
-  .service-limeline-item .number {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--ridda-primary-color);
-    min-width: 80px;
-  }
-
-  .service-limeline-item .h1 {
-    flex: 1;
-    font-size: clamp(1.5rem, 4vw, 3rem);
-    font-weight: 800;
-  }
-
-  .service-limeline-item .h1 a {
-    color: white;
-  }
-
-  .service-limeline-item .h1 a:hover {
-    color: var(--ridda-primary-color);
-  }
-
-  .detail-btn {
-    width: 60px;
-    height: 60px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
-  }
-
-  .detail-btn:hover {
-    background: var(--ridda-primary-color);
-    border-color: var(--ridda-primary-color);
-    color: var(--ridda-heading-color);
-  }
-
-  @media (max-width: 767px) {
-    .service-limeline-item {
-      flex-wrap: wrap;
-      gap: 15px;
-      padding: 20px;
-    }
-
-    .service-limeline-item .number {
-      min-width: 50px;
-    }
-
-    .detail-btn {
-      width: 50px;
-      height: 50px;
-    }
-  }
-</style>
+<!-- All styles are now in global.css -->

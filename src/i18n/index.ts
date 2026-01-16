@@ -14,7 +14,7 @@ const translations = { es, en } as const;
 
 type TranslationKeys = typeof es;
 
-function getNestedValue(obj: Record<string, unknown>, path: string): string {
+function getNestedValue(obj: Record<string, unknown>, path: string): string | string[] {
   const keys = path.split('.');
   let value: unknown = obj;
 
@@ -26,10 +26,14 @@ function getNestedValue(obj: Record<string, unknown>, path: string): string {
     }
   }
 
-  return typeof value === 'string' ? value : path;
+  // Return arrays and strings, fallback to path
+  if (typeof value === 'string' || Array.isArray(value)) {
+    return value;
+  }
+  return path;
 }
 
-export function t(key: string, locale: Locale = defaultLang): string {
+export function t(key: string, locale: Locale = defaultLang): string | string[] {
   const translation = translations[locale];
   return getNestedValue(translation as unknown as Record<string, unknown>, key);
 }

@@ -6,21 +6,113 @@ const locale = 'en';
 ---
 
 <PageLayout
-  title={`${t('services.title', locale)} - Erick Chan`}
-  bannerTitle={t('services.title', locale)}
-  bannerSubtitle={t('services.subtitle', locale)}
+  title={`${t('servicesPage.title', locale)} - Erick Chan`}
+  bannerTitle={t('servicesPage.title', locale)}
+  bannerSubtitle={t('servicesPage.subtitle', locale)}
 >
-  <section class="services-page bgc-black text-white py-130 rpy-100">
+  <section class="services-details-area bgc-black text-white py-130 rpy-100">
     <div class="container bordered-x">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="coming-soon text-center">
-            <h2>Coming Soon</h2>
-            <p>This section is under development. Soon you'll be able to see all the services I offer.</p>
-            <a href="/en/" class="theme-btn mt-30" data-hover="Back to Home">
-              <span>Back to Home</span>
-            </a>
+      <div class="row justify-content-center mb-60">
+        <div class="col-xl-8 col-lg-10">
+          <div class="section-title text-center">
+            <h2>{t('servicesPage.subtitle', locale)}</h2>
           </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Custom Web Systems & Platforms -->
+        <div class="col-lg-6">
+          <div class="service-item" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
+            <div class="service-number">01</div>
+            <h3>{t('servicesPage.customSystems.title', locale)}</h3>
+            <p>{t('servicesPage.customSystems.description', locale)}</p>
+            <ul class="service-list">
+              {(t('servicesPage.customSystems.items', locale) as unknown as string[]).map((item: string) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- AI Automation & Intelligent Systems -->
+        <div class="col-lg-6">
+          <div class="service-item" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="50">
+            <div class="service-number">02</div>
+            <h3>{t('servicesPage.aiAutomation.title', locale)}</h3>
+            <p>{t('servicesPage.aiAutomation.description', locale)}</p>
+            <ul class="service-list">
+              {(t('servicesPage.aiAutomation.items', locale) as unknown as string[]).map((item: string) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- E-commerce & Payment Integrations -->
+        <div class="col-lg-6">
+          <div class="service-item" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200" data-aos-offset="50">
+            <div class="service-number">03</div>
+            <h3>{t('servicesPage.ecommerce.title', locale)}</h3>
+            <p>{t('servicesPage.ecommerce.description', locale)}</p>
+            <ul class="service-list">
+              {(t('servicesPage.ecommerce.items', locale) as unknown as string[]).map((item: string) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Websites & Marketing Foundations -->
+        <div class="col-lg-6">
+          <div class="service-item" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="50">
+            <div class="service-number">04</div>
+            <h3>{t('servicesPage.websites.title', locale)}</h3>
+            <p>{t('servicesPage.websites.description', locale)}</p>
+            <ul class="service-list">
+              {(t('servicesPage.websites.items', locale) as unknown as string[]).map((item: string) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Mobile & Desktop Applications -->
+        <div class="col-lg-6">
+          <div class="service-item" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400" data-aos-offset="50">
+            <div class="service-number">05</div>
+            <h3>{t('servicesPage.mobile.title', locale)}</h3>
+            <p>{t('servicesPage.mobile.description', locale)}</p>
+            <ul class="service-list">
+              {(t('servicesPage.mobile.items', locale) as unknown as string[]).map((item: string) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Technical Consulting -->
+        <div class="col-lg-6">
+          <div class="service-item" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500" data-aos-offset="50">
+            <div class="service-number">06</div>
+            <h3>{t('servicesPage.consulting.title', locale)}</h3>
+            <p>{t('servicesPage.consulting.description', locale)}</p>
+            <ul class="service-list">
+              {(t('servicesPage.consulting.items', locale) as unknown as string[]).map((item: string) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="row justify-content-center mt-80 rmt-60">
+        <div class="col-lg-8 text-center">
+          <h3 class="mb-30">Ready to start your project?</h3>
+          <a href="/en/contact" class="theme-btn hover-primary" data-hover="Let's talk">
+            <span>Let's talk</span>
+          </a>
         </div>
       </div>
     </div>
@@ -28,21 +120,76 @@ const locale = 'en';
 </PageLayout>
 
 <style>
-  .coming-soon {
-    padding: 100px 0;
+  .service-item {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 100%;
+    transition: all 0.3s ease;
   }
 
-  .coming-soon h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--ridda-primary-color), var(--ridda-secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .service-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
   }
 
-  .coming-soon p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.125rem;
+  .service-number {
+    font-size: 48px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    font-family: var(--ridda-heading-font);
+  }
+
+  .service-item h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--ridda-white);
+  }
+
+  .service-item p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .service-list li {
+    padding: 10px 0 10px 30px;
+    position: relative;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .service-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--ridda-primary-color);
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  @media (max-width: 991px) {
+    .service-item {
+      padding: 30px;
+      margin-bottom: 20px;
+    }
+
+    .service-number {
+      font-size: 36px;
+    }
+
+    .service-item h3 {
+      font-size: 20px;
+    }
   }
 </style>

@@ -6,20 +6,98 @@ const locale = 'es';
 ---
 
 <PageLayout
-  title={`${t('about.subtitle', locale)} - Erick Chan`}
-  bannerTitle={t('about.subtitle', locale)}
+  title={`${t('aboutPage.title', locale)} - Erick Chan`}
+  bannerTitle={t('aboutPage.title', locale)}
+  bannerSubtitle={t('aboutPage.subtitle', locale)}
 >
-  <section class="about-page bgc-black text-white py-130 rpy-100">
+  <section class="about-details-area bgc-black text-white py-130 rpy-100">
     <div class="container bordered-x">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="coming-soon text-center">
-            <h2>Próximamente</h2>
-            <p>Esta sección está en desarrollo. Pronto podrás conocer más sobre mí y mi trayectoria.</p>
-            <a href="/es/" class="theme-btn mt-30" data-hover="Volver al Inicio">
-              <span>Volver al Inicio</span>
-            </a>
+      <!-- Bio Section -->
+      <div class="row justify-content-center mb-80 rmb-60">
+        <div class="col-lg-10">
+          <div class="bio-section" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
+            <h2 class="mb-30">{t('aboutPage.title', locale)}</h2>
+            <p class="bio-text mb-25">{t('aboutPage.bio', locale)}</p>
+            <p class="location-text">
+              <i class="fas fa-map-marker-alt"></i> {t('aboutPage.location', locale)}
+            </p>
           </div>
+        </div>
+      </div>
+
+      <!-- Experience Section -->
+      <div class="row justify-content-center mb-80 rmb-60">
+        <div class="col-lg-10">
+          <div class="experience-section" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="50">
+            <h3 class="mb-25">{t('experience.title', locale)}</h3>
+            <p class="experience-text">{t('aboutPage.experience', locale)}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technologies Section -->
+      <div class="row justify-content-center mb-80 rmb-60">
+        <div class="col-lg-10">
+          <div class="tech-section" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200" data-aos-offset="50">
+            <h3 class="mb-40">{t('aboutPage.tech.title', locale)}</h3>
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="tech-item">
+                  <div class="tech-icon">
+                    <i class="fas fa-code"></i>
+                  </div>
+                  <h4>Frontend</h4>
+                  <p>{t('aboutPage.tech.frontend', locale)}</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="tech-item">
+                  <div class="tech-icon">
+                    <i class="fas fa-server"></i>
+                  </div>
+                  <h4>Backend</h4>
+                  <p>{t('aboutPage.tech.backend', locale)}</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="tech-item">
+                  <div class="tech-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                  </div>
+                  <h4>Mobile</h4>
+                  <p>{t('aboutPage.tech.mobile', locale)}</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="tech-item">
+                  <div class="tech-icon">
+                    <i class="fas fa-brain"></i>
+                  </div>
+                  <h4>IA & Automatización</h4>
+                  <p>{t('aboutPage.tech.ai', locale)}</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="tech-item">
+                  <div class="tech-icon">
+                    <i class="fas fa-cloud"></i>
+                  </div>
+                  <h4>Cloud & DevOps</h4>
+                  <p>{t('aboutPage.tech.cloud', locale)}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h3 class="mb-30">¿Listo para trabajar juntos?</h3>
+          <a href="/es/contacto" class="theme-btn hover-primary" data-hover="Hablemos">
+            <span>Hablemos</span>
+          </a>
         </div>
       </div>
     </div>
@@ -27,21 +105,132 @@ const locale = 'es';
 </PageLayout>
 
 <style>
-  .coming-soon {
-    padding: 100px 0;
+  .bio-section {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 50px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .coming-soon h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--ridda-primary-color), var(--ridda-secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .bio-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--ridda-white);
   }
 
-  .coming-soon p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.125rem;
+  .bio-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .location-text {
+    font-size: 16px;
+    color: var(--ridda-primary-color);
+    font-weight: 600;
+  }
+
+  .location-text i {
+    margin-right: 8px;
+  }
+
+  .experience-section {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 50px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .experience-section h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--ridda-white);
+  }
+
+  .experience-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .tech-section h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--ridda-white);
+    text-align: center;
+  }
+
+  .tech-item {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 100%;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .tech-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+  }
+
+  .tech-icon {
+    width: 60px;
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ridda-primary-color);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: white;
+  }
+
+  .tech-item h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--ridda-white);
+  }
+
+  .tech-item p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 991px) {
+    .bio-section,
+    .experience-section {
+      padding: 30px;
+    }
+
+    .bio-section h2,
+    .tech-section h3 {
+      font-size: 28px;
+    }
+
+    .experience-section h3 {
+      font-size: 24px;
+    }
+
+    .bio-text {
+      font-size: 16px;
+    }
+
+    .tech-item {
+      padding: 25px;
+      margin-bottom: 20px;
+    }
+
+    .tech-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+    }
   }
 </style>

@@ -85,4 +85,52 @@ const locale = getCurrentLocale(Astro.url.pathname);
     padding-right: 0.5rem;
     color: rgba(255, 255, 255, 0.5);
   }
+
+  /* Responsive */
+  @media (max-width: 991px) {
+    .page-banner-area {
+      padding: 150px 0 80px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .page-banner-area {
+      padding: 130px 0 60px;
+    }
+
+    .banner-inner h1 {
+      font-size: 2rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .page-banner-area {
+      padding: 120px 0 50px;
+    }
+
+    .banner-inner h1 {
+      font-size: 1.75rem;
+    }
+
+    .subtitle {
+      padding: 4px 15px;
+      font-size: 0.875rem;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .banner-inner h1 {
+      font-size: 1.5rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
 </style>
