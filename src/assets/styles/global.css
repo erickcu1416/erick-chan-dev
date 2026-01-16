@@ -2379,3 +2379,16 @@ label {
     padding-right: 3rem;
   }
 }
+
+/* ============================================
+   Hero Image - Hide on Mobile
+   ============================================ */
+@media (max-width: 767px) {
+  .hero-area-four .hero-image {
+    display: none;
+  }
+
+  .hero-area-four .hero-area-shapes .shape {
+    display: none;
+  }
+}
