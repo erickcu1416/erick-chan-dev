@@ -1,11 +1,12 @@
 ---
-import { getCurrentLocale, languages, getLocalizedPath } from '@i18n/index';
+import { getCurrentLocale, languages, getLocalizedPath, translateRoute } from '@i18n/index';
 
 const currentLocale = getCurrentLocale(Astro.url.pathname);
 const basePath = Astro.url.pathname.replace(/^\/(es|en)/, '');
 
 const otherLocale = currentLocale === 'es' ? 'en' : 'es';
-const otherPath = getLocalizedPath(basePath || '/', otherLocale);
+const translatedPath = translateRoute(basePath || '/', otherLocale);
+const otherPath = getLocalizedPath(translatedPath, otherLocale);
 ---
 
 <a

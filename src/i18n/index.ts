@@ -10,6 +10,14 @@ export const defaultLang = 'es';
 
 export type Locale = keyof typeof languages;
 
+export const routeMap: Record<string, { es: string; en: string }> = {
+  home: { es: '/', en: '/' },
+  services: { es: '/servicios', en: '/services' },
+  useCases: { es: '/casos-de-uso', en: '/use-cases' },
+  about: { es: '/nosotros', en: '/about' },
+  contact: { es: '/contacto', en: '/contact' },
+};
+
 const translations = { es, en } as const;
 
 type TranslationKeys = typeof es;
@@ -49,6 +57,24 @@ export function getCurrentLocale(pathname: string): Locale {
     return lang;
   }
   return defaultLang;
+}
+
+export function translateRoute(path: string, targetLocale: Locale): string {
+  // Remove leading/trailing slashes for comparison
+  const cleanPath = path.replace(/^\/|\/$/g, '');
+
+  // Home route
+  if (cleanPath === '') return '/';
+
+  // Find matching route
+  for (const [key, routes] of Object.entries(routeMap)) {
+    if (routes.es === `/${cleanPath}` || routes.en === `/${cleanPath}`) {
+      return routes[targetLocale];
+    }
+  }
+
+  // Fallback: return original path
+  return `/${cleanPath}`;
 }
 
 export function getAlternateLinks(pathname: string): Array<{ locale: Locale; path: string }> {
